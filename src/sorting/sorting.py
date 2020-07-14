@@ -53,33 +53,33 @@ def merge(arrA, arrB):
 def merge_sort(arr):
     # Your code here
     if len(arr) > 1:
-        mid = len(arr)//2  # Finding the mid of the array
-        L = arr[:mid]  # Dividing the array elements
-        R = arr[mid:]  # into 2 halves
+        mid = len(arr)//2  # middle element position
+        left = arr[:mid]  # LHS
+        right = arr[mid:]  # RHS
 
-        merge_sort(L)  # Sorting the first half
-        merge_sort(R)  # Sorting the second half
+        merge_sort(left)  # Sorts LHS
+        merge_sort(right)  # Sorts RHS
 
         i = j = k = 0
 
-        # Copy data to temp arrays L[] and R[]
-        while i < len(L) and j < len(R):
-            if L[i] < R[j]:
-                arr[k] = L[i]
+        # Copy data to temp arrays left[] and right[]
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                arr[k] = left[i]
                 i += 1
             else:
-                arr[k] = R[j]
+                arr[k] = right[j]
                 j += 1
             k += 1
 
         # Checking if any element was left
-        while i < len(L):
-            arr[k] = L[i]
+        while i < len(left):
+            arr[k] = left[i]
             i += 1
             k += 1
 
-        while j < len(R):
-            arr[k] = R[j]
+        while j < len(right):
+            arr[k] = right[j]
             j += 1
             k += 1
     #print(arr)
@@ -95,7 +95,7 @@ def printList(arr):
 arr = [12, 11, 13, 5, 6, 7]
 print(f"Array before sorting: {arr}")
 merge_sort(arr)
-print(f"Sorted array is: {arr}")
+print(f"Sorted array: {arr}")
 
 
 # STRETCH: implement the recursive logic for merge sort in a way that doesn't

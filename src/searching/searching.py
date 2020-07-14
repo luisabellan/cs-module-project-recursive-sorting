@@ -20,17 +20,17 @@ def binary_search(arr, target, start, end):
             return binary_search(arr, target, mid + 1, end)
 
     else:
-        # Element is not present in the array
-        return -1
+        # Element not found
+        return False
 
 
 # Test code
 arr = [14, 32, 3, 0, 17]
-target = 3
+target = 99
 
 result = binary_search(arr, target, 0, len(arr)-1)
 
-if result != -1:
+if result != False:
     print("Target at index", str(result))
 else:
     print("Target not found")
