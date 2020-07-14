@@ -2,21 +2,20 @@
 def binary_search(arr, target, start, end):
     # Your code here
 
-    # Check base case
+    # base case
     if end >= start:
 
         mid = (end + start) // 2
 
-        # If element is present at the middle itself
+        # At the middle
         if arr[mid] == target:
             return mid
 
-        # If element is smaller than mid, then it can only
-        # be present in left subarray
+        # LHS
         elif arr[mid] > target:
             return binary_search(arr, target, start, mid - 1)
 
-        # Else the element can only be present in right subarray
+        # RHS
         else:
             return binary_search(arr, target, mid + 1, end)
 
@@ -25,17 +24,16 @@ def binary_search(arr, target, start, end):
         return -1
 
 
-# Test array
-arr = [2, 3, 4, 10, 40]
-target = 10
+# Test code
+arr = [14, 32, 3, 0, 17]
+target = 3
 
-# Function call
 result = binary_search(arr, target, 0, len(arr)-1)
 
 if result != -1:
-    print("Element is present at index", str(result))
+    print("Target at index", str(result))
 else:
-    print("Element is not present in array")
+    print("Target not found")
 
 
 # STRETCH: implement an order-agnostic binary search

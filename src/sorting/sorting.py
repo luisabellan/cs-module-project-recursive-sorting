@@ -82,25 +82,20 @@ def merge_sort(arr):
             arr[k] = R[j]
             j += 1
             k += 1
-    print(arr)
+    #print(arr)
     return arr
 
 
-# Code to print the list
 def printList(arr):
-    for i in range(len(arr)):
-        print(arr[i], end=" ")
-    print()
+    print(arr)
 
 
-# driver code to test the above code
-''' if __name__ == '__main__':
-    arr = [12, 11, 13, 5, 6, 7]
-    print("Given array is", end="\n")
-    printList(arr)
-    merge_sort(arr)
-    print("Sorted array is: ", end="\n")
-    printList(arr) '''
+# test code
+
+arr = [12, 11, 13, 5, 6, 7]
+print(f"Array before sorting: {arr}")
+merge_sort(arr)
+print(f"Sorted array is: {arr}")
 
 
 # STRETCH: implement the recursive logic for merge sort in a way that doesn't
@@ -108,7 +103,7 @@ def printList(arr):
 # In other words, your implementation should not allocate any additional lists
 # or data structures; it can only re-use the memory it was given as input
 
-
+''' 
 def merge_in_place(arr, start, mid, end):
     # Your code here
     pass
@@ -117,3 +112,4 @@ def merge_in_place(arr, start, mid, end):
 def merge_sort_in_place(arr, l, r):
     # Your code here
     pass
+ '''
