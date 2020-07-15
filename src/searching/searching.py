@@ -56,7 +56,7 @@ def agnostic_binary_search(arr, target):
     # Your code here
     start = 0
     end = len(arr) - 1
-    isAscending = arr[start] < arr[end]
+    is_ascending = arr[start] < arr[end]
     while start <= end:
         # calculate the middle of the current range
         mid = start + (end - start) // 2
@@ -64,7 +64,7 @@ def agnostic_binary_search(arr, target):
         if target == arr[mid]:
             return mid
 
-        if isAscending:  # ascending order
+        if is_ascending:  # ascending order
             if target < arr[mid]:
                 end = mid - 1
             # the 'target' can be in the first half
