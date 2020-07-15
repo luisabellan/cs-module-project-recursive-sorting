@@ -53,7 +53,8 @@ def merge(arrA, arrB):
 def merge_sort(arr):
     # Your code here
     if len(arr) > 1:
-        mid = len(arr)//2  # middle element position
+        mid = len(arr) // 2  # middle element position
+
         left = arr[:mid]  # LHS
         right = arr[mid:]  # RHS
 
@@ -82,7 +83,7 @@ def merge_sort(arr):
             arr[k] = right[j]
             j += 1
             k += 1
-    #print(arr)
+    # print(arr)
     return arr
 
 
